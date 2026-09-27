@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-main: #171717;
+  --bg-card: rgba(40, 40, 40, 0.5);
+  --bg-terminal: rgb(10, 10, 10);
+  
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  
+  --accent-cyan: #82f3ff;
+  --accent-green: #00ff6a;
+  --accent-gold: #FFD722;
+  
+  --font-body: Verdana, Geneva, Tahoma, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+html, body {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden; /* Hide default scrollbar since we implement a custom one */
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom Scroll Container (Will hold our scrollable content) */
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 2.5rem; color: var(--accent-gold); }
+h3 { font-size: 1.5rem; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+}
+
+/* Utility Classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-section {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 10;
+}
